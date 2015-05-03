@@ -5,6 +5,8 @@ require 'rspec/rails'
 
 require 'capybara/rspec'
 
+
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -19,6 +21,8 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
+
+
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
@@ -60,4 +64,7 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/v/3-0/docs
   config.infer_spec_type_from_file_location!
+  config.expose_current_running_example_as :example
+  config.raise_errors_for_deprecations!
+  
 end
