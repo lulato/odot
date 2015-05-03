@@ -20,7 +20,6 @@ describe "creating todo list" do
   it "redirects to the todo list index page on success" do
 
     create_todo_list
-
     expect(page).to have_content("My todo list")
 
   end
@@ -29,8 +28,6 @@ describe "creating todo list" do
     expect(TodoList.count).to eq(0)
 
     create_todo_list title: ""
-
-
     expect(page).to have_content("error")
     expect(TodoList.count).to eq(0)
 
