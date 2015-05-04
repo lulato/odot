@@ -65,6 +65,14 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/v/3-0/docs
   config.infer_spec_type_from_file_location!
   config.expose_current_running_example_as :example
-  config.raise_errors_for_deprecations!
+  # config.raise_errors_for_deprecations!
+  config.mock_with :rspec do |c|
+    c.syntax = [:should, :expect]
+  end
+  config.expect_with :rspec do |c|
+    c.syntax = [:should, :expect]
+  end
   
 end
+
+
