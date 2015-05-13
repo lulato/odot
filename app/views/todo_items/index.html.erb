@@ -5,7 +5,7 @@
     <%= @todo_list.todo_items.each do |todo_item| %>
     <li id="<%= dom_id(todo_item) %>">
 
-        <% if todo_item.completed %>
+        <% if todo_item.completed? %>
           <%= todo_item.completed_at %>
         <% else %>
           <%= link_to "Mark Complete", complete_todo_list_todo_item_path(todo_item), method: :patch %>
